@@ -1,0 +1,30 @@
+{
+  "name": "first-react-app",
+  "version": "1.0.0",
+  "description": "My first React app using ES6 and JSPM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muthahubbard/first-react-app.git"
+  },
+  "author": "Andy May",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muthahubbard/first-react-app/issues"
+  },
+  "homepage": "https://github.com/muthahubbard/first-react-app#readme",
+  "devDependencies": {
+    "jspm": "^0.16.0"
+  },
+  "jspm": {
+    "directories": {},
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.22",
+      "babel-runtime": "npm:babel-runtime@^5.8.20",
+      "core-js": "npm:core-js@^1.1.0"
+    }
+  }
+}
