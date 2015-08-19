@@ -1,5 +1,6 @@
 import 'fetch';
 import React from 'react';
+import _ from 'lodash';
 import {getFamilyData} from './api';
 // import default 
 import SearchBar from './search-bar';
@@ -11,8 +12,13 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      apiData: []
+      apiData: [],
+      searchString: ''
     };
+  }
+
+  handleSearchInputChange (searchText) {
+   this.setState( { searchString: searchText } );
   }
 
   componentDidMount() {
@@ -24,16 +30,10 @@ class App extends React.Component {
   render() {
     return <div className="wrapper">
       <h1>Hello React</h1>
-      <SearchBar />
-      <ListContainer apiData={this.state.apiData} />
+      <SearchBar onUserInputChangeCallback={this.handleSearchInputChange.bind(this)} />
+      <ListContainer searchText={this.state.searchString} apiData={this.state.apiData} />
     </div>
   }
 }
 
 React.render(<App />, document.body);
-
-/*
-getFamilyData().then( (member) => {
- console.log(member)
-});
-*/

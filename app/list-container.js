@@ -11,6 +11,7 @@ export default class ListContainer extends React.Component {
     });
 
     return <div className="list-wrapper">
+      <p>The search term is: {this.props.searchText}</p>
       <ul>
         {family}
       </ul>
