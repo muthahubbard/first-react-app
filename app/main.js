@@ -17,7 +17,7 @@ class App extends React.Component {
     };
   }
 
-  handleSearchInputChange (searchText) {
+  handleSearchInputChange = (searchText) => {
    this.setState( { searchString: searchText } );
   }
 
@@ -30,7 +30,7 @@ class App extends React.Component {
   render() {
     return <div className="wrapper">
       <h1>Hello React</h1>
-      <SearchBar onUserInputChangeCallback={this.handleSearchInputChange.bind(this)} />
+      <SearchBar onUserInputChangeCallback={this.handleSearchInputChange} />
       <ListContainer searchText={this.state.searchString} apiData={this.state.apiData} />
     </div>
   }
