@@ -57,4 +57,4 @@ class App extends React.Component {
   }
 }
 
-React.render(<App />, document.body);
+React.render(<App />, document.getElementById('app'));
