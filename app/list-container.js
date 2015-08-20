@@ -7,7 +7,7 @@ export default class ListContainer extends React.Component {
   render () {
 
     var family = this.props.apiData.map( (person) => {
-      return <ListItem name={person.name} />;
+      return <ListItem name={person.name} age={person.age} />;
     });
 
     return <div className="list-wrapper">
