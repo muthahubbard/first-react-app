@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background: #ddd; }
+
+.container-fluid {
+  max-width: 70em; }
+
+header {
+  background: #222;
+  color: #00d8ff;
+  padding: 0.6em; }
+  header a, header a:hover, header a:focus {
+    color: inherit;
+    text-decoration: none; }
+
+main {
+  background: #fff;
+  padding: 0.6em; }
+
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-content: space-between;
+      -ms-flex-line-pack: justify;
+          align-content: space-between; }
+
+.card__item {
+  border: 1px solid #eee;
+  box-shadow: 0 0 5px #eee;
+  min-height: 100px;
+  -webkit-box-flex: 20%;
+  -webkit-flex: 20%;
+      -ms-flex: 20%;
+          flex: 20%; }

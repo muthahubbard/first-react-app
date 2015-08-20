@@ -50,7 +50,6 @@ class App extends React.Component {
 
   render() {
     return <div className="wrapper">
-      <h1>Hello React</h1>
       <SearchBar onUserInputChangeCallback={this.handleSearchInputChange.bind(this)} />
       <ListContainer searchText={this.state.searchString} apiData={this.state.apiData} />
     </div>

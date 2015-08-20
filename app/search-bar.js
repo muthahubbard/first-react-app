@@ -10,9 +10,14 @@ export default class SearchBar extends React.Component {
   }
 
   render () {
-    return <form>
-      <label>Filter Data</label>
-      <input type="text" ref="searchInput" onChange={this.inputChangeEvent.bind(this)} />
-    </form>;
+    return <div>
+      <button>All</button>
+      <button>Male</button>
+      <button>Female</button>
+      <form>
+        <label>Filter Data</label>
+        <input type="text" ref="searchInput" onChange={this.inputChangeEvent.bind(this)} />
+      </form>
+    </div>;
   }
 }
