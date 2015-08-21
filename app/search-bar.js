@@ -1,4 +1,5 @@
 import React from 'react';
+import FilterDataButton from './filter-data-button';
 
 export default class SearchBar extends React.Component {
   
@@ -9,11 +10,20 @@ export default class SearchBar extends React.Component {
     this.props.onUserInputChangeCallback(this.refs.searchInput.getDOMNode().value);
   }
 
+  filterDataButtonClick (tag) {
+    this.props.onTagButtonClickCallback(tag);
+  }
+
   render () {
+
+    var tagFilterButtons = this.props.tagData.map( (tag) => {
+      return <FilterDataButton text={tag} value={tag} clickCallBack={this.filterDataButtonClick.bind(this)} />
+    });
+
     return <div>
-      <button>All</button>
-      <button>Male</button>
-      <button>Female</button>
+      <FilterDataButton text="All" value="all" clickCallBack={this.filterDataButtonClick.bind(this)} />
+      {tagFilterButtons}
+
       <form>
         <label>Filter Data</label>
         <input type="text" ref="searchInput" onChange={this.inputChangeEvent.bind(this)} />
