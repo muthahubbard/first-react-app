@@ -17,17 +17,24 @@ export default class SearchBar extends React.Component {
   render () {
 
     var tagFilterButtons = this.props.tagData.map( (tag) => {
-      return <FilterDataButton text={tag} value={tag} clickCallBack={this.filterDataButtonClick.bind(this)} />
+      return <FilterDataButton text={tag} value={tag} clickCallBack={this.filterDataButtonClick.bind(this)}  />
     });
 
-    return <div>
-      <FilterDataButton text="All" value="all" clickCallBack={this.filterDataButtonClick.bind(this)} />
-      {tagFilterButtons}
-
-      <form>
-        <label>Filter Data</label>
-        <input type="text" ref="searchInput" onChange={this.inputChangeEvent.bind(this)} />
-      </form>
-    </div>;
+    return <div class="row">
+        <div className="col-md-8">
+          <div className="btn-group" role="group">
+          <FilterDataButton text="All" value="all" clickCallBack={this.filterDataButtonClick.bind(this)} />
+          {tagFilterButtons}
+          </div>
+        </div>
+        <div className="col-md-4">
+          <form>
+            <div className="input-group">
+              <span className="input-group-addon"><span className="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+              <input type="text" ref="searchInput" placeholder="Search" className="form-control" onChange={this.inputChangeEvent.bind(this)} />
+            </div>
+          </form>
+        </div>
+      </div>;
   }
 }

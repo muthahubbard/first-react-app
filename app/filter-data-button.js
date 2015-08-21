@@ -7,7 +7,7 @@ export default class FilterDataButton extends React.Component {
   }
 
   render() {
-    return <button value="this.props.value" onClick={this.clickEvent.bind(this)}>{this.props.text}</button>
+    return <button type="button" value="this.props.value" onClick={this.clickEvent.bind(this)} className="btn btn-default">{this.props.text}</button>
   }
 
 }

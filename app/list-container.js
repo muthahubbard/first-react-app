@@ -10,11 +10,13 @@ export default class ListContainer extends React.Component {
       return <ListItem name={person.name} age={person.age} />;
     });
 
-    return <div className="list-wrapper">
+    return <div className="row">
+      <div className="col-md-12">
       <p>The search term is: {this.props.searchText}</p>
       <ul className="card-list">
         {family}
       </ul>
+      </div>
     </div>
   }
 

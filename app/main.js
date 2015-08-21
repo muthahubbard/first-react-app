@@ -23,7 +23,7 @@ class App extends React.Component {
   filterDataByTag (tag) {
     
     /// should be pushState but just to convey concept
-    var tagUrl = '/tag/' + tag;
+    var tagUrl = '/#!/tag/' + tag;
     window.history.replaceState(null, null, tagUrl);
 
     if(tag !== 'all') {

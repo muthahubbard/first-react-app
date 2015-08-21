@@ -47,4 +47,5 @@ main {
   -webkit-box-flex: 20%;
   -webkit-flex: 20%;
       -ms-flex: 20%;
-          flex: 20%; }
+          flex: 20%;
+  max-width: 20%; }
