@@ -4,7 +4,13 @@
   "description": "My first React app using ES6 and JSPM",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf dist/*",
+    "jspm": "jspm bundle-sfx app/main dist/app.js --minify",
+    "insert": "html-dist index.html --remove-all --minify --insert app.js -o dist/index.html",
+    "copyCss": "copyfiles css/main.css dist",
+    "prebuild": "npm run clean -s",
+    "build": "npm run jspm && npm run insert && npm run copyCss"
   },
   "repository": {
     "type": "git",
@@ -17,11 +23,14 @@
   },
   "homepage": "https://github.com/muthahubbard/first-react-app#readme",
   "devDependencies": {
+    "copyfiles": "^0.2.1",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-connect": "^2.2.0",
     "gulp-sass": "^2.0.4",
-    "jspm": "^0.16.0"
+    "html-dist": "^0.1.0",
+    "jspm": "^0.16.0",
+    "rimraf": "^2.4.2"
   },
   "jspm": {
     "directories": {},
