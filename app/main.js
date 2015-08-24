@@ -16,7 +16,8 @@ class App extends React.Component {
       apiData: [],
       orginalApiData: [],
       searchString: '',
-      tagData : []
+      tagData : [],
+      contentClass: 'content'
     };
   }
 
@@ -28,7 +29,6 @@ class App extends React.Component {
 
     if(tag !== 'all') {
       var filteredApiData = _.filter(this.state.orginalApiData, function(person) {
-        console.log(person.tags);
         return _.include(person.tags, tag);
       });
 
@@ -85,10 +85,24 @@ class App extends React.Component {
     this.loadData();
   }
 
+  showContentOverlay() {
+      this.setState({ contentClass: 'content content--show'})
+  }
+
   render() {
     return <div className="wrapper">
-      <SearchBar tagData={this.state.tagData} onUserInputChangeCallback={this.handleSearchInputChange.bind(this)} onTagButtonClickCallback={this.filterDataByTag.bind(this)} />
-      <ListContainer searchText={this.state.searchString} apiData={this.state.apiData} />
+      <button onClick={this.showContentOverlay.bind(this)}>Show Overlay</button>
+      <section className="grid">
+        <SearchBar tagData={this.state.tagData} onUserInputChangeCallback={this.handleSearchInputChange.bind(this)} onTagButtonClickCallback={this.filterDataByTag.bind(this)} />
+        <ListContainer searchText={this.state.searchString} apiData={this.state.apiData} />
+      </section>
+      <section className={this.state.contentClass}>
+          <div className="scroll-wrap">
+            <article>
+              <h1>Hello React</h1>
+            </article>
+          </div>
+      </section>
     </div>
   }
 }

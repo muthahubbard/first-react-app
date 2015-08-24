@@ -1,5 +1,5 @@
 import React from 'react';
-/// import single function from api.js
+import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 import ListItem from './list';
 
 export default class ListContainer extends React.Component {
@@ -14,7 +14,9 @@ export default class ListContainer extends React.Component {
       <div className="col-md-12">
       <p>The search term is: {this.props.searchText}</p>
       <ul className="card-list">
+        <ReactCSSTransitionGroup transitionName="example">
         {family}
+        </ReactCSSTransitionGroup>
       </ul>
       </div>
     </div>
