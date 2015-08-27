@@ -3,7 +3,7 @@ My first React app using ES6 and JSPM
 
 npm install
 
-gulp
+gulp - http://localhost:8080
 
 Build the dist version:
 

@@ -56,19 +56,25 @@ main {
 
 .example-enter {
   opacity: 0.01;
-  -webkit-transition: opacity 0.4s ease-in;
-          transition: opacity 0.4s ease-in; }
+  -webkit-transition: opacity 1.4s ease-in;
+          transition: opacity 1.4s ease-in; }
 
 .example-enter.example-enter-active {
   opacity: 1; }
 
 .example-leave {
   opacity: 1;
-  -webkit-transition: opacity 0.4s ease-in;
-          transition: opacity 0.4s ease-in; }
+  -webkit-transition: opacity 1.4s ease-in;
+          transition: opacity 1.4s ease-in; }
 
 .example-leave.example-leave-active {
   opacity: 0.01; }
+
+.details__wrapper {
+  background-color: aqua;
+  display: block;
+  position: relative;
+  min-height: 200px; }
 
 .grid {
   position: relative; }

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class FilterDataButton extends React.Component {
 
@@ -7,7 +8,7 @@ export default class FilterDataButton extends React.Component {
   }
 
   render() {
-    return <button type="button" value="this.props.value" onClick={this.clickEvent.bind(this)} className="btn btn-default">{this.props.text}</button>
+    return <Link to="tab" params={{ uid: this.props.value }} onClick={this.clickEvent.bind(this)} className="btn btn-default">{this.props.text}</Link>
   }
 
 }
