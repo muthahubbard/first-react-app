@@ -3,12 +3,12 @@
 
 import React from 'react';
 
-
+import _ from 'lodash';
 
 import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 import Router from 'react-router';  
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
-import _ from 'lodash';
+
 /// import default 
 import SearchBar from './search-bar';
 import ListContainer from './list-container';
@@ -39,6 +39,7 @@ class App extends React.Component {
 
   componentDidMount() {
     FamilyActions.getFamilyDataFromAPI();
+
   }
 
 
@@ -77,23 +78,6 @@ class App extends React.Component {
    }
 
   }
-
-  createUniqueTagArray (data) {
-
-    var tagData = [];
-
-    data.forEach(function(obj, index, array) {
-      tagData = _.union(tagData, obj.tags)
-    });
-
-    this.setState( {tagData: tagData} );
-
-  }
-
-
-
-
-
 
   render() {
     return <div className="wrapper">

@@ -19,7 +19,8 @@ class FamilyStore {
     // bind event dispatched from action to method in store
     this.bindListeners({
       onSearch: FamilyActions.search,
-      loadData: FamilyActions.getFamilyDataFromAPI
+      loadData: FamilyActions.getFamilyDataFromAPI,
+      loadTagData: FamilyActions.createUniqueTagArray
     });
 
   }
@@ -35,6 +36,11 @@ class FamilyStore {
     this.apiData = familyData;
     this.orginalApiData = familyData;
   }
+
+  loadTagData (tagData) {
+    this.tagData = tagData;
+  }
+
 
   
 }
