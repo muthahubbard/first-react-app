@@ -83,6 +83,7 @@ class App extends React.Component {
     return <div className="wrapper">
       
       <section className="grid">
+        <h1>This is outside {this.state.test}</h1>
         <SearchBar 
           tagData={this.state.tagData} 
           onUserInputChangeCallback={this.handleSearchInputChange.bind(this)} 

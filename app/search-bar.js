@@ -1,5 +1,6 @@
 import React from 'react';
 import FilterDataButton from './filter-data-button';
+import MyAltContainer from './altContainerTest';
 
 export default class SearchBar extends React.Component {
   
@@ -20,7 +21,13 @@ export default class SearchBar extends React.Component {
       return <FilterDataButton text={tag} value={tag} clickCallBack={this.filterDataButtonClick.bind(this)}  />
     });
 
-    return <div class="row">
+    return <section>
+      <div class="row">
+        <div className="col-md-12">
+          <MyAltContainer />
+        </div>
+       </div>
+        <div class="row">
         <div className="col-md-8">
           <div className="btn-group" role="group">
           <FilterDataButton text="All" value="all" clickCallBack={this.filterDataButtonClick.bind(this)} />
@@ -35,6 +42,7 @@ export default class SearchBar extends React.Component {
             </div>
           </form>
         </div>
-      </div>;
+      </div>
+      </section>;
   }
 }

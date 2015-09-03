@@ -8,7 +8,7 @@
     "clean": "rimraf dist/*",
     "jspm": "jspm bundle-sfx app/main dist/app.js --minify",
     "insert": "html-dist index.html --remove-all --minify --insert app.js -o dist/index.html",
-    "copyCss": "copyfiles css/main.css dist",
+    "copyCss": "copyfiles css/dist/main.css dist",
     "prebuild": "npm run clean -s",
     "build": "npm run jspm && npm run insert && npm run copyCss"
   },
@@ -23,10 +23,12 @@
   },
   "homepage": "https://github.com/muthahubbard/first-react-app#readme",
   "devDependencies": {
+    "autoprefixer-core": "^5.2.1",
     "copyfiles": "^0.2.1",
+    "csswring": "^4.0.0",
     "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^2.3.1",
     "gulp-connect": "^2.2.0",
+    "gulp-postcss": "^6.0.0",
     "gulp-sass": "^2.0.4",
     "html-dist": "^0.1.0",
     "jspm": "^0.16.0",

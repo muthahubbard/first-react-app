@@ -7,7 +7,7 @@ class FamilyActions {
   /// TODO: remove test / learning
   search(searchText) {
     // make api call to get data
-    console.log('alt action search');
+   //console.log('alt action search');
 
     // action needs to dispatch event
     this.dispatch(['Andy', 'Emily', 'William', 'Lizzie']);

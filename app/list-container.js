@@ -2,34 +2,9 @@ import React from 'react';
 import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 import ListItem from './list';
 
-import FamilyStore from './stores/my-store';
 
 
 export default class ListContainer extends React.Component {
-
-  constructor (props) {
-    super(props);
-
-    this.state = FamilyStore.getState();
-    console.log(this.state);
-  }
-
-
-  componentWillMount() {
-    /// listen for changes in store
-    FamilyStore.listen(this.onChange.bind(this));
-  }
-  componentWillUnmount() {
-    FamilyStore.unlisten(this.onChange);
-  }
-
-  onChange() {
-    console.log('store has changed');
-    console.log(FamilyStore.getState());
-    
-    this.setState(FamilyStore.getState());
-  }
-
 
   render () {
 
@@ -39,7 +14,7 @@ export default class ListContainer extends React.Component {
 
     return <div className="row">
       <div className="col-md-12">
-      <p>The search term is: {this.props.searchText} --- {this.state.test}</p>
+      <p>The search term is: {this.props.searchText}</p>
       <ul className="card-list">
         <ReactCSSTransitionGroup transitionName="example">
         {family}

@@ -8,7 +8,7 @@ class FamilyStore {
   constructor() {
 
     /// Instance variables defined anywhere in the store will become the state
-    this.test = 'ssdsd';
+    this.test = 'testing-testing-testing';
 
     this.apiData = [];
     this.orginalApiData = [];
@@ -27,8 +27,8 @@ class FamilyStore {
 
   /// action handler
   onSearch(mydata) {
-    console.log(mydata);
-    console.log('store event fired');
+    //console.log(mydata);
+    //console.log('store event fired');
     this.test = 'sjaisaisjaijsijaisjaijsijaisjiajsijaisais';    
   }
 
